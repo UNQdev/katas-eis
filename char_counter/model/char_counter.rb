@@ -5,6 +5,7 @@ class CharCounter
         if string.equal? nil
             {}
         else
+            string = string.delete " "
             counted = Hash.new 0
             
             string.each_char do |char|
