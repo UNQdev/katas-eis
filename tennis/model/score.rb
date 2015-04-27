@@ -55,5 +55,7 @@ class Score
         translate_points(points_player_one) + " - " + translate_points(points_player_two)
     end
     
-
+    def print_sets()
+        sets_player_one.to_s + " - " + sets_player_two.to_s
+    end
 end
