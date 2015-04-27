@@ -10,7 +10,7 @@ class Tennis
         @player_two = name_player_two
         
         @score = Score.new()
-        @match_state = MatchBegin.new()
+        @match_state = LoveLove.new()
     end
     
     def print_points()
