@@ -40,6 +40,10 @@ class Score
         @points_player_one -= 1
     end
     
+    def remove_adv_player_two()
+        @points_player_two -= 1
+    end
+    
     
     def translate_points(points)
         case points
