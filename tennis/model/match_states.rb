@@ -163,3 +163,21 @@ class ThirtyLove
     end
 
 end
+
+class FortyLove
+
+    def point_player_one(score)
+        score.point_player_one()
+        score.game_player_one()
+        score.reset_points()
+        new_state = LoveLove.new
+        new_state
+    end
+
+    def point_player_two(score)
+        score.point_player_two()
+        new_state = FortyFifteen.new
+        new_state
+    end
+
+end
