@@ -13,7 +13,14 @@ class Tennis
         @match_state = MatchBegin.new()
     end
     
+    def print_points()
+        @score.print_points()
+    end
     
+    def print_sets()
+        @score.print_sets()
+    end
+        
     def print_score()
         @score.print_score(@player_one, @player_two)
     end
@@ -27,5 +34,5 @@ class Tennis
         @match_state = @match_state.point_player_two(@score)
         puts "POINT PLAYER " + @player_two + " | " + @score.print_points()
     end
-    
+
 end

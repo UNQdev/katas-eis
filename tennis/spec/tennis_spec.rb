@@ -8,7 +8,7 @@ describe 'Tennis' do
       it 'should starts with both Sets in 0 and points in 00' do
         tennis = Tennis.new("Marcelo","Jose")
         expect(tennis.print_points()).to eq("00 - 00")
-        expect(tennis.print_sets()).to eq("[0,0,0] - [0,0,0]")
+        expect(tennis.print_sets()).to eq("[0, 0, 0] - [0, 0, 0]")
       end
     
     end
