@@ -6,8 +6,8 @@ class Score
     
     def initialize()
         @actual_set = 0
-        @sets_player_one = [0,0]
-        @sets_player_two = [0,0]
+        @sets_player_one = [0,0,0]
+        @sets_player_two = [0,0,0]
         @points_player_one = 0
         @points_player_two = 0
     end
@@ -55,4 +55,5 @@ class Score
         translate_points(points_player_one) + " - " + translate_points(points_player_two)
     end
     
+
 end
