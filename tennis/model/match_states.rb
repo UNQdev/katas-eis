@@ -45,3 +45,19 @@ class FifteenFifteen
     end
     
 end
+
+class ThirtyFifteen
+
+    def point_player_one(score)
+        score.point_player_one()
+        new_state = FortyFifteen.new
+        new_state
+    end
+    
+    def point_player_two(score)
+        score.point_player_two()
+        new_state = ThirtyThirty.new
+        new_state
+    end
+    
+end
