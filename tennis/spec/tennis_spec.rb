@@ -232,6 +232,30 @@ describe 'Tennis' do
     		tennis.point_player_one()
     		tennis.point_player_one()
     		tennis.point_player_one()
+    		tennis.point_player_one() #set 1 won by player 1
+    		tennis.point_player_one()
+    		tennis.point_player_one()
+    		tennis.point_player_one()
+    		tennis.point_player_one() #game won by player 1
+    		tennis.point_player_one()
+    		tennis.point_player_one()
+    		tennis.point_player_one()
+    		tennis.point_player_one() #game won by player 1
+    		tennis.point_player_one()
+    		tennis.point_player_one()
+    		tennis.point_player_one()
+    		tennis.point_player_one() #game won by player 1
+    		tennis.point_player_one()
+    		tennis.point_player_one()
+    		tennis.point_player_one()
+    		tennis.point_player_one() #game won by player 1
+    		tennis.point_player_one()
+    		tennis.point_player_one()
+    		tennis.point_player_one()
+    		tennis.point_player_one() #game won by player 1
+    		tennis.point_player_one()
+    		tennis.point_player_one()
+    		tennis.point_player_one()
     		expect(tennis.point_player_one()).to eq("Marcelo WINS!")
     	end
 
