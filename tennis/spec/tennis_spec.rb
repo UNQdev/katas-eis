@@ -152,6 +152,7 @@ describe 'Tennis' do
         tennis = Tennis.new("Marcelo","Jose")
         tennis.point_player_two()
         tennis.point_player_two()
+        tennis.point_player_two()
         expect(tennis.print_points()).to eq("00 - 40")
       end
         
