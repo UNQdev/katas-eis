@@ -129,3 +129,21 @@ class AdvPlayerOne
     end
 
 end
+
+class AdvPlayerTwo
+
+    def point_player_one(score)
+        score.remove_adv_player_two()
+        new_state = Deuce.new
+        new_state
+    end
+
+    def point_player_two(score)
+        score.point_player_two()
+        score.game_player_two()
+        score.reset_points()
+        new_state = LoveLove.new
+        new_state
+    end
+
+end
