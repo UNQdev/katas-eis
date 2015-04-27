@@ -200,7 +200,7 @@ describe 'Tennis' do
     		tennis.point_player_one()
     		tennis.point_player_one() #game won by player 1
     		expect(tennis.print_points()).to eq("00 - 00")
-    		expect(tennis.print_sets()).to eq("[6,0,0] - [0,0,0]")
+    		expect(tennis.print_sets()).to eq("[6, 0, 0] - [0, 0, 0]")
     	end
 
     end
