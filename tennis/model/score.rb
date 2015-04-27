@@ -22,19 +22,37 @@ class Score
     end
     
     def game_player_one()
-        @sets_player_one[actual_set] += 1
+        if @sets_player_one[actual_set] < 6
+            @sets_player_one[actual_set] += 1
+        else
+            set_player_one()
+        end
     end
     
     def game_player_two()
-        @sets_player_two[actual_set] += 1
+        if @sets_player_two[actual_set] < 6
+            @sets_player_two[actual_set] += 1
+        else
+            set_player_two()
+        end
     end
     
+    
+    def set_player_one()
+        if (playing_set_two? || playing_set_three?) && player_one_won_a_set?
+            @tennis_match.player_one_wins()
+        else
+            @actual_set += 1
+        end
+    end
 
-    def begin_set_two()
-        @actual_set += 1
+    def set_player_two()
+        if (playing_set_two? || playing_set_three?) && player_two_won_a_set?
+            @tennis_match.player_two_wins()
+        else
+            @actual_set += 1
     end
-    
-    
+
     
     def remove_adv_player_one()
         @points_player_one -= 1
