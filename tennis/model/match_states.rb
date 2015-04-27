@@ -95,3 +95,19 @@ class FortyThirty
     end
 
 end
+
+class Deuce
+
+    def point_player_one(score)
+        score.point_player_one()
+        new_state = AdvPlayerOne.new
+        new_state
+    end
+
+    def point_player_two(score)
+        score.point_player_two()
+        new_state = AdvPlayerTwo.new
+        new_state
+    end
+
+end
