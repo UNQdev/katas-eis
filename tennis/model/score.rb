@@ -21,6 +21,7 @@ class Score
         @points_player_two += 1
     end
     
+    
     def game_player_one()
         if @sets_player_one[actual_set] < 6
             @sets_player_one[actual_set] += 1
@@ -51,6 +52,7 @@ class Score
             @tennis_match.player_two_wins()
         else
             @actual_set += 1
+        end
     end
 
     
