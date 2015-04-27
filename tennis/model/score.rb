@@ -54,6 +54,15 @@ class Score
             @actual_set += 1
         end
     end
+    
+    
+    def playing_set_two?()
+        @actual_set == 1
+    end
+
+    def playing_set_three?()
+        @actual_set == 2
+    end
 
     
     def remove_adv_player_one()
