@@ -231,3 +231,15 @@ class LoveForty
     end
     
 end
+
+class MatchFinished
+
+    def point_player_one(score)
+        "GAME FINISHED"
+    end
+
+    def point_player_two(score)
+        "GAME FINISHED"
+    end
+
+end
