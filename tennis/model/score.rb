@@ -35,6 +35,12 @@ class Score
     end
     
     
+    
+    def remove_adv_player_one()
+        @points_player_one -= 1
+    end
+    
+    
     def translate_points(points)
         case points
         when 0

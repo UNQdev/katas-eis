@@ -123,7 +123,6 @@ class AdvPlayerOne
     end
 
     def point_player_two(score)
-        score.point_player_two()
         score.remove_adv_player_one()
         new_state = Deuce.new
         new_state
