@@ -60,6 +60,10 @@ class Score
         end
     end
     
+    def reset_points()
+        @points_player_one = 0
+        @points_player_two = 0
+    end
     
     def print_points()
         translate_points(points_player_one) + " - " + translate_points(points_player_two)
