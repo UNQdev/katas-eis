@@ -1,7 +1,7 @@
 Feature: Ships create
 
   Background:
-    Given a board with dimensions "5" x "5"
+    Given a battleship board with dimensions "5" x "5"
 
   @wip
   Scenario: Create a small ship in a valid location

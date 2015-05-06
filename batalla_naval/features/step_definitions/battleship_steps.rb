@@ -1,7 +1,7 @@
-require_relative '../../app/models/Board.rb'
+require_relative '../../app/models/Battleship.rb'
 
-Given(/^a board with dimensions "(.*?)" x "(.*?)"$/) do |arg1, arg2|
-  @board = Board.new arg1, arg2
+Given(/^a battleship board with dimensions "(.*?)" x "(.*?)"$/) do |dimension, arg2|
+  @battleship = Battleship.new dimension
 end
 
 Given(/^I create a small ship in position "(.*?)"$/) do |arg1|
