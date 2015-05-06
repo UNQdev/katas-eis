@@ -9,6 +9,10 @@
 /test/version_tmp/
 /tmp/
 
+
+## Specific to batalla_naval
+/batalla_naval/reports
+
 ## Specific to RubyMotion:
 .dat*
 .repl_history
