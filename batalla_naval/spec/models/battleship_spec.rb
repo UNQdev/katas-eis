@@ -39,4 +39,31 @@ describe 'Battleship' do
 
   end
 
+    describe 'placing large ships on a 5x5 battleship' do
+
+    it 'should be a ship placed in 3:3 and 3:4 when its created' do
+      position_one = [3,3]
+      position_two = [3,4]
+      expected_one = [[3,3], false]
+      expected_two = [[3,4], false]
+      ship = Ship.new([position_one, position_two])
+      expect(ship.location).to include(expected_one)
+      expect(ship.location).to include(expected_two)
+      @battleship.place_ship(ship)
+      expect(@battleship.ships).not_to be_empty
+    end
+
+    it 'should not be a ship placed in 6:6 and 5:6 since is a invalid position' do
+      position_one = [5,6]
+      position_two = [6,6]
+      expected_one = [[5,6], false]
+      expected_two = [[6,6], false]
+      ship = Ship.new([position_one, position_two])
+      expect(ship.location).to include(expected_one)
+      expect(ship.location).to include(expected_two)
+      expect{ @battleship.place_ship(ship) }.to raise_error
+      expect(@battleship.ships).to be_empty
+    end
+
+  end
 end
