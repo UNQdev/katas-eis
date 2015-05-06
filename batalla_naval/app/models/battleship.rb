@@ -10,8 +10,6 @@ class Battleship
   def place_ship(ship)
     if valid_positions? ship
       @ships << ship
-    else
-      raise InvalidPosition, "Invalid position to place ship"
     end
   end
 
