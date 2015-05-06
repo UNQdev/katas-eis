@@ -10,3 +10,11 @@ Feature: Ships create
   Scenario: Create a small ship in a invalid location
     When I create a small ship in invalid position "6":"6"
     Then it should raise a "Invalid position to place a ship" error
+
+  Scenario: Create a large ship in a valid location
+      When I create a large ship in position "3":"3" and "3":"4"
+      Then positions "3":"3" and "3":"4" are not empty
+
+  Scenario: Create a large ship in a invalid location
+      When I create a large ship in invalid positions "6":"6" and "6":"5"
+      Then it should raise a "Invalid position to place a ship" error

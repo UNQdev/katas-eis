@@ -39,7 +39,7 @@ describe 'Battleship' do
 
   end
 
-    describe 'placing large ships on a 5x5 battleship' do
+  describe 'placing large ships on a 5x5 battleship' do
 
     it 'should be a ship placed in 3:3 and 3:4 when its created' do
       position_one = [3,3]
