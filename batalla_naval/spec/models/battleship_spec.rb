@@ -1,4 +1,4 @@
-require_relative '../../app/models/Battleship.rb'
+require_relative '../../app/models/battleship.rb'
 require_relative '../spec_helper.rb'
 
 describe 'Battleship' do
