@@ -36,7 +36,6 @@ describe 'Battleship' do
       expect{ @battleship.place_ship(ship) }.to raise_error
       expect(@battleship.ships).to be_empty
     end
-
   end
 
   describe 'placing large ships on a 5x5 battleship' do
@@ -64,6 +63,36 @@ describe 'Battleship' do
       expect{ @battleship.place_ship(ship) }.to raise_error
       expect(@battleship.ships).to be_empty
     end
+  end
+
+  describe 'shooting at ships' do
+
+    before (:each) do
+      positions = [[3,4], [4,4]]
+      @ship = Ship.new(positions)
+      @battleship.place_ship(@ship)
+    end
+
+    it 'should shoot and hit' do
+      position = [3,4]
+      expect{ @ship.somebody_shoot(position) }.to raise_error
+    end
+
+    it 'should shoot and miss' do
+      position = [3,2]
+      expect{ @ship.somebody_shoot(position) }.not_to raise_error
+    end
+
+    it 'should shoot and sink' do
+      position = [4,4]
+      expect{ @ship.somebody_shoot(position) }.to raise_error
+    end
+
+    it 'should be an invalid shoot' do
+      position = [[6,6]]
+      expect{ @battleship.shoot(position) }.to raise_error
+    end
 
   end
+
 end
