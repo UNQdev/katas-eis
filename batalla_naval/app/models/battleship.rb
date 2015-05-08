@@ -18,7 +18,7 @@ class Battleship
   def shoot(position)
     if valid_shoot? position
       @ships.each do |ship|
-        ship.somebody_shoot position
+        ship.somebody_shoot(position)
       end
     else
       raise InvalidPosition, 'Invalid position to shoot'
@@ -54,10 +54,10 @@ class Ship
   def somebody_shoot(position)
     if @location.any? { |ship_pos| position == ship_pos[0] }
       if got_hit? && !sank?
-        raise Sank, "Ship sinking"
+        raise Sank, 'Ship sinking'
       else
         ship_pos[1] = true
-        raise Hit, "Ship hit"
+        raise Hit, 'Ship hit'
       end
     end
   end

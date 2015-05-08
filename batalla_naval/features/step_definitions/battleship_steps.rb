@@ -47,3 +47,27 @@ When(/^I create a large ship in invalid positions "(.*?)":"(.*?)" and "(.*?)":"(
 	@ship = Ship.new(positions)
 	expect(@battleship.valid_positions?(@ship)).to eq false
 end
+
+Given(/^a large ship in position "(.*?)":"(.*?)" and "(.*?)":"(.*?)"$/) do |row1, col1, row2, col2|
+  	positions = [[row1,col1], [row2,col2]]
+	@ship = Ship.new(positions)
+	@battleship.place_ship(@ship)
+end
+
+Given(/^I shoot to position "(.*?)":"(.*?)"$/) do |row1,col1|
+  @position = [[row1,col1]]
+  @battleship.shoot(@position)
+end
+
+Then(/^I get "(.*?)"$/) do |error_msg|
+  expect { @ship.somebody_shoot(@position) }.to raise_error(error_msg)
+end
+
+Then(/^I get water$/) do
+  expect { @ship.somebody_shoot(@position) }.not_to raise_error
+end
+
+Then(/^I shoot again to position "(.*?)":"(.*?)"$/) do |row1, col1|
+  @position = [[row1,col1]]
+  @battleship.shoot(@position)
+end
