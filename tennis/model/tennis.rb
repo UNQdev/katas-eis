@@ -2,18 +2,18 @@ require_relative '../model/score.rb'
 require_relative '../model/match_states.rb'
 
 class Tennis
-    
+
     attr_accessor :player_one, :player_two, :score, :match_state
-    
+
     def initialize(name_player_one, name_player_two)
         @player_one = name_player_one
         @player_two = name_player_two
-        
+
         @score = Score.new()
         @score.tennis_match = self
         @match_state = LoveLove.new()
     end
-    
+
     def print_points()
         @score.print_points()
     end
