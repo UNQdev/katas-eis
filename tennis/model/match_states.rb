@@ -12,11 +12,11 @@ class LoveLove
         0
     end
 
-    def point_player_one(scoreboard)
+    def player_one_point(scoreboard)
         scoreboard.next_match_state(FifteenLove.new)
     end
 
-    def point_player_two(scoreboard)
+    def player_two_point(scoreboard)
         scoreboard.next_match_state(LoveFifteen.new)
     end
 end
@@ -35,11 +35,11 @@ class LoveFifteen
         15
     end
 
-    def point_player_one(scoreboard)
+    def player_one_point(scoreboard)
         scoreboard.next_match_state(FifteenFifteen.new)
     end
 
-    def point_player_two(scoreboard)
+    def player_two_point(scoreboard)
         scoreboard.next_match_state(LoveThirty.new)
     end
 end
@@ -58,11 +58,11 @@ class LoveThirty
         30
     end
 
-    def point_player_one(scoreboard)
+    def player_one_point(scoreboard)
         scoreboard.next_match_state(FifteenThirty.new)
     end
 
-    def point_player_two(scoreboard)
+    def player_two_point(scoreboard)
         scoreboard.next_match_state(LoveForty.new)
     end
 end
@@ -81,12 +81,12 @@ class LoveForty
         40
     end
 
-    def point_player_one(scoreboard)
+    def player_one_point(scoreboard)
         scoreboard.next_match_state(FifteenForty.new)
     end
 
-    def point_player_two(scoreboard)
-        scoreboard.game_player_two(LoveLove.new)
+    def player_two_point(scoreboard)
+        scoreboard.game_player_two
     end
 end
 
@@ -104,11 +104,11 @@ class FifteenLove
         0
     end
 
-    def point_player_one(scoreboard)
+    def player_one_point(scoreboard)
         scoreboard.next_match_state(ThirtyLove.new)
     end
 
-    def point_player_two(scoreboard)
+    def player_two_point(scoreboard)
         scoreboard.next_match_state(FifteenFifteen.new)
     end
 end
@@ -127,11 +127,11 @@ class FifteenFifteen
         15
     end
 
-    def point_player_one(scoreboard)
+    def player_one_point(scoreboard)
         scoreboard.next_match_state(ThirtyFifteen.new)
     end
 
-    def point_player_two(scoreboard)
+    def player_two_point(scoreboard)
         scoreboard.next_match_state(FifteenThirty.new)
     end
 end
@@ -150,11 +150,11 @@ class FifteenThirty
         30
     end
 
-    def point_player_one(scoreboard)
+    def player_one_point(scoreboard)
         scoreboard.next_match_state(ThirtyThirty.new)
     end
 
-    def point_player_two(scoreboard)
+    def player_two_point(scoreboard)
         scoreboard.next_match_state(FifteenForty.new)
     end
 end
@@ -173,12 +173,12 @@ class FifteenForty
         40
     end
 
-    def point_player_one(scoreboard)
+    def player_one_point(scoreboard)
         scoreboard.next_match_state(ThirtyForty.new)
     end
 
-    def point_player_two(scoreboard)
-        scoreboard.game_player_two(LoveLove.new)
+    def player_two_point(scoreboard)
+        scoreboard.game_player_two
     end
 end
 
@@ -196,12 +196,12 @@ class ThirtyLove
         0
     end
 
-    def point_player_one(scoreboard)
+    def player_one_point(scoreboard)
         scoreboard.next_match_state(FortyLove.new)
     end
 
-    def point_player_two(scoreboard)
-        scoreboard.game_player_two(ThirtyFifteen.new)
+    def player_two_point(scoreboard)
+        scoreboard.game_player_two
     end
 end
 
@@ -219,11 +219,11 @@ class ThirtyFifteen
         15
     end
 
-    def point_player_one(scoreboard)
+    def player_one_point(scoreboard)
         scoreboard.next_match_state(FortyFifteen.new)
     end
 
-    def point_player_two(scoreboard)
+    def player_two_point(scoreboard)
         scoreboard.next_match_state(ThirtyThirty.new)
     end
 end
@@ -242,11 +242,11 @@ class ThirtyThirty
         30
     end
 
-    def point_player_one(scoreboard)
+    def player_one_point(scoreboard)
         scoreboard.next_match_state(FortyThirty.new)
     end
 
-    def point_player_two(scoreboard)
+    def player_two_point(scoreboard)
         scoreboard.next_match_state(ThirtyForty.new)
     end
 end
@@ -265,12 +265,12 @@ class ThirtyForty
         40
     end
 
-    def point_player_one(scoreboard)
+    def player_one_point(scoreboard)
         scoreboard.next_match_state(Deuce.new)
     end
 
-    def point_player_two(scoreboard)
-        scoreboard.game_player_two(LoveLove.new)
+    def player_two_point(scoreboard)
+        scoreboard.game_player_two
     end
 end
 
@@ -288,11 +288,11 @@ class FortyLove
         0
     end
 
-    def point_player_one(scoreboard)
-        scoreboard.game_player_one(LoveLove.new)
+    def player_one_point(scoreboard)
+        scoreboard.game_player_one
     end
 
-    def point_player_two(scoreboard)
+    def player_two_point(scoreboard)
         scoreboard.next_match_state(FortyFifteen.new)
     end
 end
@@ -311,11 +311,11 @@ class FortyFifteen
         15
     end
 
-    def point_player_one(scoreboard)
-        scoreboard.game_player_one(LoveLove.new)
+    def player_one_point(scoreboard)
+        scoreboard.game_player_one
     end
 
-    def point_player_two(scoreboard)
+    def player_two_point(scoreboard)
         scoreboard.next_match_state(FortyThirty.new)
     end
 end
@@ -334,11 +334,11 @@ class FortyThirty
         30
     end
 
-    def point_player_one(scoreboard)
-        scoreboard.game_player_one(LoveLove.new)
+    def player_one_point(scoreboard)
+        scoreboard.game_player_one
     end
 
-    def point_player_two(scoreboard)
+    def player_two_point(scoreboard)
         scoreboard.next_match_state(Deuce.new())
     end
 end
@@ -357,11 +357,11 @@ class Deuce
         40
     end
 
-    def point_player_one(scoreboard)
+    def player_one_point(scoreboard)
         scoreboard.next_match_state(AdvPlayerOne.new)
     end
 
-    def point_player_two(scoreboard)
+    def player_two_point(scoreboard)
         scoreboard.next_match_state(AdvPlayerTwo.new)
     end
 end
@@ -380,12 +380,12 @@ class AdvPlayerOne
         40
     end
 
-    def point_player_one(scoreboard)
-        scoreboard.game_player_one(LoveLove.new)
+    def player_one_point(scoreboard)
+        scoreboard.game_player_one
     end
 
-    def point_player_two(scoreboard)
-        scoreboard.game_player_one(Deuce.new)
+    def player_two_point(scoreboard)
+        scoreboard.next_match_state(Deuce.new)
     end
 end
 
@@ -403,12 +403,12 @@ class AdvPlayerTwo
         'ADV'
     end
 
-    def point_player_one(scoreboard)
+    def player_one_point(scoreboard)
         scoreboard.next_match_state(Deuce.new)
     end
 
-    def point_player_two(scoreboard)
-        scoreboard.game_player_one(LoveLove.new)
+    def player_two_point(scoreboard)
+        scoreboard.game_player_one
     end
 end
 
@@ -418,11 +418,11 @@ class MatchFinished
         '00 - 00'
     end
 
-    def point_player_one(scoreboard)
+    def player_one_point(scoreboard)
         'GAME FINISHED'
     end
 
-    def point_player_two(scoreboard)
+    def player_two_point(scoreboard)
         'GAME FINISHED'
     end
 end
