@@ -85,13 +85,29 @@ describe 'Scoreboard' do
             6.times { @scoreboard.game_player_two } #player two wins six games in a row
 
             expect(@scoreboard.player_two_sets). to eq [6,0,0]
+            expect(@scoreboard.actual_set).to eq 1
         end
 
     end
 
-    describe 'match won' do
+    describe 'match finished' do
 
-        it 'should announce the winner' do
+        it 'should not allow to continue playing after a player won two sets' do
+            6.times {
+                4.times {
+                    @scoreboard.point_player_one
+                }
+            }
+            6.times {
+                4.times {
+                    @scoreboard.point_player_one
+                }
+            }
+
+            expect(@scoreboard.point_player_one).to eq 'Game finished'
+            expect(@scoreboard.point_player_two).to eq 'Game finished'
+            expect(@scoreboard.player_one_sets).to eq [6,6,0]
+            expect(@scoreboard.actual_set).to eq 1
         end
     end
 end

@@ -419,10 +419,10 @@ class MatchFinished
     end
 
     def player_one_point(scoreboard)
-        'GAME FINISHED'
+        'Game finished'
     end
 
     def player_two_point(scoreboard)
-        'GAME FINISHED'
+        'Game finished'
     end
 end
