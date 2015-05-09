@@ -46,12 +46,27 @@ describe 'Scoreboard' do
         end
     end
 
-    describe 'points and game reset' do
+    describe 'set reset' do
 
     	it 'should be 00 - 00 and 0 won games for both players starting second set' do
+            6.times { @scoreboard.game_player_one } #player one wins first set
+
+            expect(@scoreboard.player_one_sets).to eq [6,0,0]
+            expect(@scoreboard.player_one_games).to eq 0
+            expect(@scoreboard.player_two_sets).to eq [0,0,0]
+            expect(@scoreboard.player_two_games).to eq 0
+            expect(@scoreboard.actual_set).to eq 1
     	end
 
         it 'should be 00 - 00 and 0 won games for both players starting third set' do
+            6.times { @scoreboard.game_player_one } #player one wins first set
+            6.times { @scoreboard.game_player_two } #player two wins second set
+
+            expect(@scoreboard.player_one_sets).to eq [6,0,0]
+            expect(@scoreboard.player_one_games).to eq 0
+            expect(@scoreboard.player_two_sets).to eq [0,6,0]
+            expect(@scoreboard.player_two_games).to eq 0
+            expect(@scoreboard.actual_set).to eq 2
         end
     end
 

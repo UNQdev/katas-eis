@@ -51,6 +51,7 @@ class Scoreboard
         if player_one_games < 5
             @sets_player_one[@actual_set] += 1
         else
+            @sets_player_one[@actual_set] += 1
             set_player_one
         end
     end
@@ -59,22 +60,35 @@ class Scoreboard
         if player_two_games < 5
             @sets_player_two[@actual_set] += 1
         else
+            @sets_player_two[@actual_set] += 1
             set_player_two
         end
     end
 
     def set_player_one
+        if (playing_set_two? || playing_set_three?) && player_one_won_a_set?
+            @match_state = FinishedMatch.new
+        else
+            @actual_set += 1
+        end
     end
 
     def set_player_two
+        if (playing_set_two? || playing_set_three?) && player_two_won_a_set?
+            @match_state = FinishedMatch.new
+        else
+            @actual_set += 1
+        end
     end
 
 
     #ingame evaluations
     def playing_set_two?
+        @actual_set == 1
     end
 
     def playing_set_three?
+        @actual_set == 2
     end
 
     def player_one_won_a_set?
