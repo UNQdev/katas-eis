@@ -82,6 +82,9 @@ describe 'Scoreboard' do
     describe 'game and set won' do
 
         it 'should be [6,0,0] and actual set should be the second' do
+            6.times { @scoreboard.game_player_two } #player two wins six games in a row
+
+            expect(@scoreboard.player_two_sets). to eq [6,0,0]
         end
 
     end
