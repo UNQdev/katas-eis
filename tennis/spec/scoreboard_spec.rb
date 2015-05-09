@@ -73,6 +73,9 @@ describe 'Scoreboard' do
     describe 'game won' do
 
         it 'should pass from [0,0,0] to [1,0,0]' do
+            @scoreboard.game_player_two
+
+            expect(@scoreboard.player_two_games).to eq 1
         end
     end
 
