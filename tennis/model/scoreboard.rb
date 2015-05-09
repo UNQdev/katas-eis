@@ -1,15 +1,42 @@
 class Scoreboard
 
-    attr_accessor :actual_set, 
+    attr_accessor :actual_set, :match_state,
     :sets_player_one, :sets_player_two,
     :games_player_one, :games_player_two
 
     def initialize(name_one, name_two)
         @actual_set = 0
+        @match_state = LoveLove.new
+
         @player_one_name = name_one
         @player_one_name = name_two
+
         @sets_player_one = [0,0,0]
         @sets_player_two = [0,0,0]
+    end
+
+    def player_one_points
+        @match_state.player_one_points
+    end
+
+    def player_two_points
+        @match_state.player_two_points
+    end
+
+    def player_one_games
+        @sets_player_one[actual_set]
+    end
+
+    def player_two_games
+        @sets_player_two[actual_set]
+    end
+
+    def player_one_sets
+        @sets_player_one
+    end
+
+    def player_two_sets
+        @sets_player_two
     end
 
     def point_player_one

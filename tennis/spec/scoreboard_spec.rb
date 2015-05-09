@@ -24,8 +24,8 @@ describe 'Scoreboard' do
       end
 
       it 'should starts with sets in 0' do
-        expect(@scoreboard.player_one_sets).to eq 0
-        expect(@scoreboard.player_two_sets).to eq 0
+        expect(@scoreboard.player_one_sets.all? {|set| set == 0}).to eq true
+        expect(@scoreboard.player_two_sets.all? {|set| set == 0}).to eq true
       end
     end
 

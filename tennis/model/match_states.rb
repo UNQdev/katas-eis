@@ -4,11 +4,11 @@ class LoveLove
         '00 - 00'
     end
 
-    def points_player_one
+    def player_one_points
         0
     end
 
-    def points_player_two
+    def player_two_points
         0
     end
 
@@ -27,11 +27,11 @@ class LoveFifteen
         '00 - 15'
     end
 
-    def points_player_one
+    def player_one_points
         0
     end
 
-    def points_player_two
+    def player_two_points
         15
     end
 
@@ -50,11 +50,11 @@ class LoveThirty
         '00 - 30'
     end
 
-    def points_player_one
+    def player_one_points
         0
     end
 
-    def points_player_two
+    def player_two_points
         30
     end
 
@@ -73,11 +73,11 @@ class LoveForty
         '00 - 40'
     end
 
-    def points_player_one
+    def player_one_points
         0
     end
 
-    def points_player_two
+    def player_two_points
         40
     end
 
@@ -96,11 +96,11 @@ class FifteenLove
         '15 - 00'
     end
 
-    def points_player_one
+    def player_one_points
         15
     end
 
-    def points_player_two
+    def player_two_points
         0
     end
 
@@ -119,11 +119,11 @@ class FifteenFifteen
         '15 - 15'
     end
 
-    def points_player_one
+    def player_one_points
         15
     end
 
-    def points_player_two
+    def player_two_points
         15
     end
 
@@ -142,11 +142,11 @@ class FifteenThirty
         '15 - 30'
     end
 
-    def points_player_one
+    def player_one_points
         15
     end
 
-    def points_player_two
+    def player_two_points
         30
     end
 
@@ -165,11 +165,11 @@ class FifteenForty
         '15 - 40'
     end
 
-    def points_player_one
+    def player_one_points
         15
     end
 
-    def points_player_two
+    def player_two_points
         40
     end
 
@@ -188,11 +188,11 @@ class ThirtyLove
         '30 - 00'
     end
 
-    def points_player_one
+    def player_one_points
         30
     end
 
-    def points_player_two
+    def player_two_points
         0
     end
 
@@ -211,11 +211,11 @@ class ThirtyFifteen
         '30 - 15'
     end
 
-    def points_player_one
+    def player_one_points
         30
     end
 
-    def points_player_two
+    def player_two_points
         15
     end
 
@@ -234,11 +234,11 @@ class ThirtyThirty
         '30 - 30'
     end
 
-    def points_player_one
+    def player_one_points
         30
     end
 
-    def points_player_two
+    def player_two_points
         30
     end
 
@@ -257,11 +257,11 @@ class ThirtyForty
         '30 - 40'
     end
 
-    def points_player_one
+    def player_one_points
         30
     end
 
-    def points_player_two
+    def player_two_points
         40
     end
 
@@ -280,11 +280,11 @@ class FortyLove
         '40 - 00'
     end
 
-    def points_player_one
+    def player_one_points
         40
     end
 
-    def points_player_two
+    def player_two_points
         0
     end
 
@@ -303,11 +303,11 @@ class FortyFifteen
         '40 - 15'
     end
 
-    def points_player_one
+    def player_one_points
         40
     end
 
-    def points_player_two
+    def player_two_points
         15
     end
 
@@ -326,11 +326,11 @@ class FortyThirty
         '40 - 30'
     end
 
-    def points_player_one
+    def player_one_points
         40
     end
 
-    def points_player_two
+    def player_two_points
         30
     end
 
@@ -349,11 +349,11 @@ class Deuce
         '40 - 40'
     end
 
-    def points_player_one
+    def player_one_points
         40
     end
 
-    def points_player_two
+    def player_two_points
         40
     end
 
@@ -372,11 +372,11 @@ class AdvPlayerOne
         'ADV - 40'
     end
 
-    def points_player_one
+    def player_one_points
         'ADV'
     end
 
-    def points_player_two
+    def player_two_points
         40
     end
 
@@ -395,11 +395,11 @@ class AdvPlayerTwo
         '40 - ADV'
     end
 
-    def points_player_one
+    def player_one_points
         40
     end
 
-    def points_player_two
+    def player_two_points
         'ADV'
     end
 

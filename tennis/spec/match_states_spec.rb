@@ -15,8 +15,8 @@ describe 'Match States' do
 
     it 'and points should be 00 - 00' do
       expect(@match_state.points).to eq '00 - 00'
-      expect(@match_state.points_player_one).to eq 0
-      expect(@match_state.points_player_two).to eq 0
+      expect(@match_state.player_one_points).to eq 0
+      expect(@match_state.player_two_points).to eq 0
     end
   end
 
@@ -33,8 +33,8 @@ describe 'Match States' do
 
     it 'and points should be 00 - 15' do
       expect(@match_state.points).to eq '00 - 15'
-      expect(@match_state.points_player_one).to eq 0
-      expect(@match_state.points_player_two).to eq 15
+      expect(@match_state.player_one_points).to eq 0
+      expect(@match_state.player_two_points).to eq 15
     end
   end
 
@@ -51,8 +51,8 @@ describe 'Match States' do
 
     it 'and points should be 00 - 30' do
       expect(@match_state.points).to eq '00 - 30'
-      expect(@match_state.points_player_one).to eq 0
-      expect(@match_state.points_player_two).to eq 30
+      expect(@match_state.player_one_points).to eq 0
+      expect(@match_state.player_two_points).to eq 30
     end
   end
 
@@ -69,8 +69,8 @@ describe 'Match States' do
 
     it 'and points should be 00 - 40' do
       expect(@match_state.points).to eq '00 - 40'
-      expect(@match_state.points_player_one).to eq 0
-      expect(@match_state.points_player_two).to eq 40
+      expect(@match_state.player_one_points).to eq 0
+      expect(@match_state.player_two_points).to eq 40
     end
   end
 
@@ -86,8 +86,8 @@ describe 'Match States' do
 
     it 'and points should be 15 - 00' do
       expect(@match_state.points).to eq '15 - 00'
-      expect(@match_state.points_player_one).to eq 15
-      expect(@match_state.points_player_two).to eq 0
+      expect(@match_state.player_one_points).to eq 15
+      expect(@match_state.player_two_points).to eq 0
     end
   end
 
@@ -104,8 +104,8 @@ describe 'Match States' do
 
     it 'and points should be 15 - 15' do
       expect(@match_state.points).to eq '15 - 15'
-      expect(@match_state.points_player_one).to eq 15
-      expect(@match_state.points_player_two).to eq 15
+      expect(@match_state.player_one_points).to eq 15
+      expect(@match_state.player_two_points).to eq 15
     end
   end
 
@@ -122,8 +122,8 @@ describe 'Match States' do
 
     it 'and points should be 15 - 30' do
       expect(@match_state.points).to eq '15 - 30'
-      expect(@match_state.points_player_one).to eq 15
-      expect(@match_state.points_player_two).to eq 30
+      expect(@match_state.player_one_points).to eq 15
+      expect(@match_state.player_two_points).to eq 30
     end
   end
 
@@ -140,8 +140,8 @@ describe 'Match States' do
 
     it 'and points should be 15 - 40' do
       expect(@match_state.points).to eq '15 - 40'
-      expect(@match_state.points_player_one).to eq 15
-      expect(@match_state.points_player_two).to eq 40
+      expect(@match_state.player_one_points).to eq 15
+      expect(@match_state.player_two_points).to eq 40
     end
   end
 
@@ -158,8 +158,8 @@ describe 'Match States' do
 
     it 'and points should be 30 - 00' do
       expect(@match_state.points).to eq '30 - 00'
-      expect(@match_state.points_player_one).to eq 30
-      expect(@match_state.points_player_two).to eq 0
+      expect(@match_state.player_one_points).to eq 30
+      expect(@match_state.player_two_points).to eq 0
     end
   end
 
@@ -176,8 +176,8 @@ describe 'Match States' do
 
     it 'and points should be 30 - 15' do
       expect(@match_state.points).to eq '30 - 15'
-      expect(@match_state.points_player_one).to eq 30
-      expect(@match_state.points_player_two).to eq 15
+      expect(@match_state.player_one_points).to eq 30
+      expect(@match_state.player_two_points).to eq 15
     end
   end
 
@@ -194,8 +194,8 @@ describe 'Match States' do
 
     it 'and points should be 30 - 30' do
       expect(@match_state.points).to eq '30 - 30'
-      expect(@match_state.points_player_one).to eq 30
-      expect(@match_state.points_player_two).to eq 30
+      expect(@match_state.player_one_points).to eq 30
+      expect(@match_state.player_two_points).to eq 30
     end
   end
 
@@ -213,8 +213,8 @@ describe 'Match States' do
 
     it 'and points should be 30 - 40' do
       expect(@match_state.points).to eq '30 - 40'
-      expect(@match_state.points_player_one).to eq 30
-      expect(@match_state.points_player_two).to eq 40
+      expect(@match_state.player_one_points).to eq 30
+      expect(@match_state.player_two_points).to eq 40
     end
   end
 
@@ -231,8 +231,8 @@ describe 'Match States' do
 
     it 'and points should be 40 - 00' do
       expect(@match_state.points).to eq '40 - 00'
-      expect(@match_state.points_player_one).to eq 40
-      expect(@match_state.points_player_two).to eq 00
+      expect(@match_state.player_one_points).to eq 40
+      expect(@match_state.player_two_points).to eq 00
     end
   end
 
@@ -249,8 +249,8 @@ describe 'Match States' do
 
     it 'and points should be 40 - 15' do
       expect(@match_state.points).to eq '40 - 15'
-      expect(@match_state.points_player_one).to eq 40
-      expect(@match_state.points_player_two).to eq 15
+      expect(@match_state.player_one_points).to eq 40
+      expect(@match_state.player_two_points).to eq 15
     end
   end
 
@@ -267,8 +267,8 @@ describe 'Match States' do
 
     it 'and points should be 40 - 30' do
       expect(@match_state.points).to eq '40 - 30'
-      expect(@match_state.points_player_one).to eq 40
-      expect(@match_state.points_player_two).to eq 30
+      expect(@match_state.player_one_points).to eq 40
+      expect(@match_state.player_two_points).to eq 30
     end
   end
 
@@ -286,8 +286,8 @@ describe 'Match States' do
 
     it 'and points should be 40 - 40' do
       expect(@match_state.points).to eq '40 - 40'
-      expect(@match_state.points_player_one).to eq 40
-      expect(@match_state.points_player_two).to eq 40
+      expect(@match_state.player_one_points).to eq 40
+      expect(@match_state.player_two_points).to eq 40
     end
   end
 
@@ -304,8 +304,8 @@ describe 'Match States' do
 
     it 'and points should be ADV - 40' do
       expect(@match_state.points).to eq 'ADV - 40'
-      expect(@match_state.points_player_one).to eq 'ADV'
-      expect(@match_state.points_player_two).to eq 40
+      expect(@match_state.player_one_points).to eq 'ADV'
+      expect(@match_state.player_two_points).to eq 40
     end
   end
 
@@ -322,8 +322,8 @@ describe 'Match States' do
 
     it 'and points should be 40 - ADV' do
       expect(@match_state.points).to eq '40 - ADV'
-      expect(@match_state.points_player_one).to eq 40
-      expect(@match_state.points_player_two).to eq 'ADV'
+      expect(@match_state.player_one_points).to eq 40
+      expect(@match_state.player_two_points).to eq 'ADV'
     end
   end
 end
