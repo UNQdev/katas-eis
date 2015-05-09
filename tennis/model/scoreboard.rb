@@ -15,6 +15,10 @@ class Scoreboard
         @sets_player_two = [0,0,0]
     end
 
+    def next_match_state(state)
+        @match_state = state
+    end
+
     #getters
     def player_one_points
         @match_state.player_one_points
@@ -42,12 +46,15 @@ class Scoreboard
 
     #counting/setting
     def point_player_one
+        @match_state.player_one_point(self)
     end
 
     def point_player_two
+        @match_state.player_two_point(self)
     end
 
     def game_player_one
+        @match_state = LoveLove.new
         if player_one_games < 5
             @sets_player_one[@actual_set] += 1
         else
@@ -57,6 +64,7 @@ class Scoreboard
     end
 
     def game_player_two
+        @match_state = LoveLove.new
         if player_two_games < 5
             @sets_player_two[@actual_set] += 1
         else
@@ -95,15 +103,5 @@ class Scoreboard
     end
 
     def player_two_won_a_set?
-    end
-
-
-    def reset_points
-    end
-
-    def print_points
-    end
-
-    def print_sets
     end
 end

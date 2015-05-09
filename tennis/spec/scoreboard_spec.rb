@@ -32,14 +32,14 @@ describe 'Scoreboard' do
     describe 'points reset' do
 
     	it 'should be 00 - 00 after a player ONE wins a game' do
-            @scoreboard.game_player_one
+            4.times { @scoreboard.point_player_one }
 
             expect(@scoreboard.player_one_points).to eq 0
             expect(@scoreboard.player_two_points).to eq 0
     	end
 
         it 'should be 00 - 00 after a player TWO wins a game' do
-            @scoreboard.game_player_two
+            4.times { @scoreboard.point_player_two }
 
             expect(@scoreboard.player_one_points).to eq 0
             expect(@scoreboard.player_two_points).to eq 0
