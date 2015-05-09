@@ -31,18 +31,27 @@ describe 'Scoreboard' do
 
     describe 'points reset' do
 
-    	it 'should be 00 - 00 after a player wins a game' do
+    	it 'should be 00 - 00 after a player ONE wins a game' do
+            @scoreboard.game_player_one
+
+            expect(@scoreboard.player_one_points).to eq 0
+            expect(@scoreboard.player_two_points).to eq 0
     	end
+
+        it 'should be 00 - 00 after a player TWO wins a game' do
+            @scoreboard.game_player_two
+
+            expect(@scoreboard.player_one_points).to eq 0
+            expect(@scoreboard.player_two_points).to eq 0
+        end
     end
 
     describe 'points and game reset' do
 
-    	it 'should be 00 - 00 and 0 won games for both players on second set' do
-
+    	it 'should be 00 - 00 and 0 won games for both players starting second set' do
     	end
 
-        it 'should be 00 - 00 and 0 won games for both players on third set' do
-
+        it 'should be 00 - 00 and 0 won games for both players starting third set' do
         end
     end
 

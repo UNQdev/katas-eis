@@ -15,6 +15,7 @@ class Scoreboard
         @sets_player_two = [0,0,0]
     end
 
+    #getters
     def player_one_points
         @match_state.player_one_points
     end
@@ -24,11 +25,11 @@ class Scoreboard
     end
 
     def player_one_games
-        @sets_player_one[actual_set]
+        @sets_player_one[@actual_set]
     end
 
     def player_two_games
-        @sets_player_two[actual_set]
+        @sets_player_two[@actual_set]
     end
 
     def player_one_sets
@@ -39,16 +40,27 @@ class Scoreboard
         @sets_player_two
     end
 
+    #counting/setting
     def point_player_one
     end
 
     def point_player_two
     end
 
-    def game_player_one(new_match_state)
+    def game_player_one
+        if player_one_games < 5
+            @sets_player_one[@actual_set] += 1
+        else
+            set_player_one
+        end
     end
 
-    def game_player_two(new_match_state)
+    def game_player_two
+        if player_two_games < 5
+            @sets_player_two[@actual_set] += 1
+        else
+            set_player_two
+        end
     end
 
     def set_player_one
@@ -58,7 +70,7 @@ class Scoreboard
     end
 
 
-
+    #ingame evaluations
     def playing_set_two?
     end
 
@@ -70,7 +82,6 @@ class Scoreboard
 
     def player_two_won_a_set?
     end
-
 
 
     def reset_points
