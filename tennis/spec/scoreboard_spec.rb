@@ -3,15 +3,29 @@ require_relative '../model/scoreboard.rb'
 
 describe 'Scoreboard' do
 
+    before (:each) do
+        @scoreboard = Scoreboard.new("Marcelo","Jose")
+    end
+
     describe 'initialize' do
 
+      it 'should starts with actual set in 0' do
+        expect(@scoreboard.actual_set).to eq 0
+      end
+
       it 'should starts with points in 0' do
+        expect(@scoreboard.player_one_points).to eq 0
+        expect(@scoreboard.player_two_points).to eq 0
       end
 
       it 'should starts with games in 0' do
+        expect(@scoreboard.player_one_games).to eq 0
+        expect(@scoreboard.player_two_games).to eq 0
       end
 
       it 'should starts with sets in 0' do
+        expect(@scoreboard.player_one_sets).to eq 0
+        expect(@scoreboard.player_two_sets).to eq 0
       end
     end
 
@@ -51,7 +65,7 @@ describe 'Scoreboard' do
 
     describe 'match won' do
 
-        it 'should announce the winners name' do
+        it 'should announce the winner' do
         end
     end
 end

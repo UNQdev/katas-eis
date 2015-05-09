@@ -1,8 +1,8 @@
 class Scoreboard
 
-    attr_accessor :actual_set,
+    attr_accessor :actual_set, 
     :sets_player_one, :sets_player_two,
-    :games_player_one, :games_player_two,
+    :games_player_one, :games_player_two
 
     def initialize(name_one, name_two)
         @actual_set = 0
@@ -30,6 +30,8 @@ class Scoreboard
     def set_player_two
     end
 
+
+
     def playing_set_two?
     end
 
@@ -41,6 +43,8 @@ class Scoreboard
 
     def player_two_won_a_set?
     end
+
+
 
     def reset_points
     end
