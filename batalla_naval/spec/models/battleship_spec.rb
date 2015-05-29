@@ -91,10 +91,9 @@ describe 'Battleship' do
     end
 
     it 'should be an invalid shoot' do
-      position = [[6,6]]
+      position = [6,6]
       expect(@battleship.shoot(position)).to eq 'Invalid position to shoot'
     end
-
   end
 
 end

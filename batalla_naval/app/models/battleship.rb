@@ -34,7 +34,7 @@ class Battleship
   end
 
   def valid_shoot?(position)
-    position[0][0] <= @board[0] && position[0][1] <= @board[1]
+    position[0] <= @board[0] && position[1] <= @board[1]
   end
 end
 
