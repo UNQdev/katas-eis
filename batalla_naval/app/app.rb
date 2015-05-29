@@ -10,6 +10,10 @@ module BattleshipApp
     end
 
     post 'generate_board' do
+      @battleship = Battleship.new params[:dimension]
+      session[:battleship] = @battleship
+
+      render 'battleship/ingame'
   	end
 
   	post 'place_ship' do
