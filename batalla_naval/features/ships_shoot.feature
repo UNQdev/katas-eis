@@ -17,3 +17,7 @@ Feature: Shooting
 	Then I get "Ship hit"
 	And I shoot to position "4":"4"
 	Then I get "Ship sinking"
+
+  Scenario: Shoot out of board
+      When I shoot to position "6":"6"
+      Then I get "Invalid position to shoot"
