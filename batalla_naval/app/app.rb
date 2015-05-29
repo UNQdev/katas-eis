@@ -6,7 +6,7 @@ module BattleshipApp
     enable :sessions
 
     get '/' do
-      render 'batalla/inicio'
+      render 'battleship/home'
     end
 
     post 'generate_board' do
@@ -15,6 +15,10 @@ module BattleshipApp
   	post 'place_ship' do
     end
 
+    post 'place_large_ship' do
+    end
+
     post 'shoot' do
     end
+  end
 end
