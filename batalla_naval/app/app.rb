@@ -1,3 +1,5 @@
+require_relative 'models/battleship'
+
 module BattleshipApp
   class App < Padrino::Application
     register Padrino::Rendering
@@ -17,6 +19,17 @@ module BattleshipApp
   	end
 
   	post 'place_ship' do
+      @ship = Ship.new [[]]
+
+      begin
+        session[:board].add_small_ship_in coordinate, Ship.small_ship
+      rescue Exception => e
+        @small_creation_message = e.message
+      end
+
+      @board = session[:board]
+
+      render 'batalla/juego'
     end
 
     post 'place_large_ship' do
