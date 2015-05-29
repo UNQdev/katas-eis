@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+  <h1 class="h1">In game</h1>
+    <br/>
+
+    <p>Board size: <%=  "#{session[:battleship].board[0]} by #{session[:battleship].board[1]}" %> </p>
+
+    <p>First place the ships</p>
+    <form method="POST" action="place_ship">
+        <%= csrf_token_field %>
+      <p>Enter position for a small ship</p>
+      <label>X</label>
+      <input id="x_pos" type="number" name="x_pos">
+      <label>Y</label>
+      <input id="y_pos" type="number" name="y_pos">
+      <input type="submit" value="Place Ship"/>
+
+      <p><%= @creation_msg %></p>
+    </form>
+  </body>
+</html>
