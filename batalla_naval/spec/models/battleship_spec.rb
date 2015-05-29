@@ -33,7 +33,7 @@ describe 'Battleship' do
       expected = [[[6,6], false]]
       ship = Ship.new(position)
       expect(ship.location).to eq expected
-      expect{ @battleship.place_ship(ship) }.to raise_error
+      expect(@battleship.place_ship(ship)).to eq 'Invalid position to place a ship'
       expect(@battleship.ships).to be_empty
     end
   end
@@ -60,7 +60,7 @@ describe 'Battleship' do
       ship = Ship.new([position_one, position_two])
       expect(ship.location).to include(expected_one)
       expect(ship.location).to include(expected_two)
-      expect{ @battleship.place_ship(ship) }.to raise_error
+      expect(@battleship.place_ship(ship)).to eq 'Invalid position to place a ship'
       expect(@battleship.ships).to be_empty
     end
   end
@@ -75,22 +75,24 @@ describe 'Battleship' do
 
     it 'should shoot and hit' do
       position = [3,4]
-      expect{ @ship.somebody_shoot(position) }.to raise_error
+      expect(@ship.somebody_shoot(position)).to eq 'Ship hit'
     end
 
     it 'should shoot and miss' do
       position = [3,2]
-      expect{ @ship.somebody_shoot(position) }.not_to raise_error
+      expect(@ship.somebody_shoot(position)).to eq nil
     end
 
     it 'should shoot and sink' do
-      position = [4,4]
-      expect{ @ship.somebody_shoot(position) }.to raise_error
+      first_pos = [3,4]
+      second_pos = [4,4]
+      expect(@ship.somebody_shoot(first_pos)).to eq 'Ship hit'
+      expect(@ship.somebody_shoot(second_pos)).to eq 'Ship sinking'
     end
 
     it 'should be an invalid shoot' do
       position = [[6,6]]
-      expect{ @battleship.shoot(position) }.to raise_error
+      expect(@battleship.shoot(position)).to eq 'Invalid position to shoot'
     end
 
   end
