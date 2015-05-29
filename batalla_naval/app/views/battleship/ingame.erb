@@ -7,7 +7,7 @@
   <h1 class="h1">In game</h1>
     <br/>
 
-    <p>Board size: <%=  "#{session[:battleship].board[0]} by #{session[:battleship].board[1]}" %> </p>
+    <h2 class="h2">Board size: <%=  "#{session[:battleship].board[0]} by #{session[:battleship].board[1]}" %> </h2>
 
     <p>First place the ships</p>
     <form method="POST" action="place_ship">
@@ -20,6 +20,24 @@
       <input id="place_small" type="submit" value="Place Ship"/>
 
       <p><%= @creation_msg %></p>
+    </form>
+
+    <form method="POST" action="place_large_ship">
+        <%= csrf_token_field %>
+      <p>Enter positions for a large ship</p>
+      <label>X1</label>
+      <input id="x1_pos" type="number" name="x1_pos">
+      <label>Y1</label>
+      <input id="y1_pos" type="number" name="y1_pos">
+      <br>
+      <br>
+      <label>X2</label>
+      <input id="x2_pos" type="number" name="x2_pos">
+      <label>Y2</label>
+      <input id="y2_pos" type="number" name="y2_pos">
+      <input id="place_large" type="submit" value="Place Ship"/>
+
+      <p><%= @creation_msg_large %></p>
     </form>
   </body>
 </html>

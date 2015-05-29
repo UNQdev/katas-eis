@@ -31,6 +31,17 @@ module BattleshipApp
     end
 
     post 'place_large_ship' do
+      @pos1 = [params[:x1_pos],params[:y1_pos]]
+      @pos2 = [params[:x2_pos],params[:y2_pos]]
+      @ship = Ship.new ([@pos1,@pos2])
+      @creation_msg_large = session[:battleship].place_ship @ship
+      if @creation_msg_large.to_s.start_with? 'Invalid'
+        @creation_msg_large
+      else
+        @creation_msg_large = 'Ship placed'
+      end
+
+      render 'battleship/ingame'
     end
 
     post 'shoot' do

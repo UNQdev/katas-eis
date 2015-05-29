@@ -24,15 +24,23 @@ When(/^I create a small ship in invalid position "(.*?)":"(.*?)"$/) do |row,col|
 end
 
 When(/^I create a large ship in position "(.*?)":"(.*?)" and "(.*?)":"(.*?)"$/) do |row1, col1, row2, col2|
-  pending
+  fill_in 'x1_pos', with: row1
+  fill_in 'y1_pos', with: col1
+  fill_in 'x2_pos', with: row2
+  fill_in 'y2_pos', with: col2
+  find('#place_large').click
 end
 
 Then(/^positions "(.*?)":"(.*?)" and "(.*?)":"(.*?)" are not empty$/) do |row1, col1, row2, col2|
-  pending
+  page.should have_content('Ship placed')
 end
 
 When(/^I create a large ship in invalid positions "(.*?)":"(.*?)" and "(.*?)":"(.*?)"$/) do |row1, col1, row2, col2|
-  pending
+  fill_in 'x1_pos', with: row1
+  fill_in 'y1_pos', with: col1
+  fill_in 'x2_pos', with: row2
+  fill_in 'y2_pos', with: col2
+  find('#place_large').click
 end
 
 And(/^a large ship in position "(.*?)":"(.*?)" and "(.*?)":"(.*?)"$/) do |row1, col1, row2, col2|
