@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+  <h1 class="h1">Welcome to Battleship</h1>
+    <br/>
+    <form method="POST" action="generate_board">
+        <%= csrf_token_field %>
+      <p>Set board dimension. Remember the board is perfect squared (DxD)</p>
+      <label>Dimension</label>
+      <input id="dimension" type="number" name="dimension">
+      <input type="submit" value="Generate"/>
+    </form>
+  </body>
+</html>
