@@ -26,10 +26,6 @@ When(/^I create a small ship in invalid position "(.*?)":"(.*?)"$/) do |row,col|
 	expect(@battleship.valid_positions?(@ship)).to eq false
 end
 
-Then(/^it should raise a "(.*?)" error$/) do |error_msg|
-	expect { @battleship.place_ship(@ship) }.to raise_error(error_msg)
-end
-
 When(/^I create a large ship in position "(.*?)":"(.*?)" and "(.*?)":"(.*?)"$/) do |row1, col1, row2, col2|
 	positions = [[row1,col1], [row2,col2]]
 	@battleship.place_ship(Ship.new(positions))
@@ -48,26 +44,25 @@ When(/^I create a large ship in invalid positions "(.*?)":"(.*?)" and "(.*?)":"(
 	expect(@battleship.valid_positions?(@ship)).to eq false
 end
 
-Given(/^a large ship in position "(.*?)":"(.*?)" and "(.*?)":"(.*?)"$/) do |row1, col1, row2, col2|
+And(/^a large ship in position "(.*?)":"(.*?)" and "(.*?)":"(.*?)"$/) do |row1, col1, row2, col2|
   	positions = [[row1,col1], [row2,col2]]
 	@ship = Ship.new(positions)
 	@battleship.place_ship(@ship)
 end
 
-Given(/^I shoot to position "(.*?)":"(.*?)"$/) do |row1,col1|
-  @position = [[row1,col1]]
-  @battleship.shoot(@position)
+When(/^I shoot to position "(.*?)":"(.*?)"$/) do |row,col|
+  @position = [row,col]
+  @shoot_result = @ship.somebody_shoot(@position)
 end
 
-Then(/^I get "(.*?)"$/) do |error_msg|
-  expect { @ship.somebody_shoot(@position) }.to raise_error(error_msg)
+Then(/^I get "(.*?)"$/) do |shoot_msg|
+  expect(@shoot_result).to eq shoot_msg
 end
 
 Then(/^I get water$/) do
-  expect { @ship.somebody_shoot(@position) }.not_to raise_error
+  expect(@ship.somebody_shoot(@position)).to eq nil
 end
 
-Then(/^I shoot again to position "(.*?)":"(.*?)"$/) do |row1, col1|
-  @position = [[row1,col1]]
-  @battleship.shoot(@position)
+Then(/^I get "(.*?)" message$/) do |creation_msg|
+  expect(@battleship.place_ship(@ship)).to eq creation_msg
 end
