@@ -45,6 +45,26 @@ module BattleshipApp
     end
 
     post 'shoot' do
+      @shoot_pos = [params[:shoot_x_pos],params[:shoot_y_pos]]
+      @battleship = session[:battleship]
+      @ships = @battleship.ships
+
+      if @battleship.valid_shoot? @shoot_pos
+        @ships.each do |ship|
+          @shoot_result = ship.somebody_shoot(@shoot_pos)
+          if @shoot_result.to_s.include? 'Ship'
+            @shoot_msg = @shoot_result
+          elsif @shoot_msg.to_s.include? 'Ship'
+            @shoot_msg
+           else
+            @shoot_msg = 'Water'
+          end
+        end
+      else
+        @shoot_msg = 'Invalid position to shoot'
+      end
+
+      render 'battleship/ingame'
     end
   end
 end

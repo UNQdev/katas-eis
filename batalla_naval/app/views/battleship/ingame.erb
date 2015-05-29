@@ -39,5 +39,18 @@
 
       <p><%= @creation_msg_large %></p>
     </form>
+
+    <p>Ships placed? Shoot at them!</p>
+    <form method="POST" action="shoot">
+        <%= csrf_token_field %>
+      <p>Enter position to shoot</p>
+      <label>X</label>
+      <input id="shoot_x_pos" type="number" name="shoot_x_pos">
+      <label>Y</label>
+      <input id="shoot_y_pos" type="number" name="shoot_y_pos">
+      <input id="shoot" type="submit" value="Shoot"/>
+
+      <p><%= @shoot_msg %></p>
+    </form>
   </body>
 </html>
