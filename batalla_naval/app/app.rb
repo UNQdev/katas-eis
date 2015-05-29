@@ -19,17 +19,15 @@ module BattleshipApp
   	end
 
   	post 'place_ship' do
-      @ship = Ship.new [[]]
-
-      begin
-        session[:board].add_small_ship_in coordinate, Ship.small_ship
-      rescue Exception => e
-        @small_creation_message = e.message
+      @ship = Ship.new [[params[:x_pos],params[:y_pos]]]
+      @creation_msg = session[:battleship].place_ship @ship
+      if @creation_msg.to_s.start_with? 'Invalid'
+        @creation_msg
+      else
+        @creation_msg = 'Ship placed'
       end
 
-      @board = session[:board]
-
-      render 'batalla/juego'
+      render 'battleship/ingame'
     end
 
     post 'place_large_ship' do

@@ -7,19 +7,20 @@ Given(/^a battleship board with dimensions "(.*?)" x "(.*?)"$/) do |dimension, c
 end
 
 When(/^I create a small ship in position "(.*?)":"(.*?)"$/) do |row,col|
-  pending
+  fill_in 'x_pos', with: row
+  fill_in 'y_pos', with: col
+  find('#place_small').click
 end
 
 Then(/^position "(.*?)":"(.*?)" is not empty$/) do |row,col|
-  pending
-end
-
-Then(/^position "(.*?)":"(.*?)" should not be valid$/) do |row,col|
-  pending
+  page.should have_content('Ship placed')
 end
 
 When(/^I create a small ship in invalid position "(.*?)":"(.*?)"$/) do |row,col|
-  pending
+  fill_in 'x_pos', with: row
+  fill_in 'y_pos', with: col
+  find('#place_small').click
+  page.should have_content('Invalid position to place a ship')
 end
 
 When(/^I create a large ship in position "(.*?)":"(.*?)" and "(.*?)":"(.*?)"$/) do |row1, col1, row2, col2|
@@ -51,5 +52,5 @@ Then(/^I get water$/) do
 end
 
 Then(/^I get "(.*?)" message$/) do |creation_msg|
-  pending
+  page.should have_content creation_msg
 end
